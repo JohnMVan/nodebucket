@@ -1,0 +1,21 @@
+/*
+Title:  home.component.css
+Original Author: Richard Krasso
+Appended by:  John Vanhessche
+Date 14 March 2023
+Description:  CSS file for the home component.
+*/
+
+.main-welcome {
+  margin-top: 30px;
+}
+
+.title {
+  text-align: center;
+  font-weight: lighter;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+}

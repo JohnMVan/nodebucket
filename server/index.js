@@ -42,7 +42,7 @@ mongoose.connect(CONN).then(() => {
 });
 
 //openAPI and Swagger settings
-const options = {                                //Added during Assignment 1.2
+const options = {                               
   definition: {
       openapi: '3.0.0',
       info: {

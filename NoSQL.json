@@ -1,0 +1,12 @@
+{
+	"empId": "1007",
+	"firstName": "Ludwig",
+	"lastName": "Beethoven",
+	"todo": [{
+		"description": "clean garage"
+	}],
+	"done": [{
+		"description": "wash car"
+	}]
+}
+

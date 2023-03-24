@@ -1,14 +1,18 @@
 //Title:  app-routing.module.ts
 //Original Author: Richard Krasso
 //Appended by:  John Vanhessche
-//Date 14 March 2023
+//Date 22 March 2023
 //Description:  TypeScript file for the app-routing.module component.
 
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {BaseLayoutComponent} from "./shared/base-layout/base-layout.component";
-import {HomeComponent} from "./pages/home/home.component";
+import { BaseLayoutComponent } from "./shared/base-layout/base-layout.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './auth.guard';
+
 
 const routes: Routes = [
   {
@@ -17,7 +21,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      }
+    ]
+  },
+  {
+    path: 'session',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
       }
     ]
   }

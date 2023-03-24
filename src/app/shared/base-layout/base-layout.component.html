@@ -2,12 +2,11 @@
 Title:  base-layout.component.html
 Original Author: Richard Krasso
 Appended by:  John Vanhessche
-Date 14 March 2023
+Date 22 March 2023
 Description:  HTML file for the base-layout component.
 -->
 
 <div fxLayout="column">
-
   <!-- navigation -->
   <nav fxFlex>
     <mat-toolbar>
@@ -15,9 +14,23 @@ Description:  HTML file for the base-layout component.
       <div class="navbar-container">
         <!-- logo -->
         <button class="logo" routerLink="/" mat-button>nodebucket</button>
-
         <button class="navbar-link" routerLink="/" mat-button>Home</button>
         <button class="navbar-link" mat-button>About</button>
+      </div>
+
+      <div fxFlex></div>
+
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User profile menu">
+          <mat-icon>perm_identity</mat-icon>
+        </button>
+        <mat-menu #profileMenu>
+          <p style="padding: 10px; font-size: 16px; font-weight: lighter;">Signed in as {{ sessionName }}</p>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Log out</span>
+          </button>
+        </mat-menu>
       </div>
 
     </mat-toolbar>

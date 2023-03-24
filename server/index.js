@@ -4,7 +4,6 @@
 //Date 14 March 2023
 //Description:  Javascript file for the index.js.
 
-
 /**
  * Require statements
  */
@@ -12,7 +11,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const createError = require('http-errors');
-const employeeRoute = require('./routes/employee-route')
+const EmployeeRoute = require('./routes/employee-route')
 const swaggerUI = require('swagger-ui-express');     
 const swaggerJsdoc = require('swagger-jsdoc');     
 
@@ -60,14 +59,13 @@ const openapiSpecification = swaggerJsdoc(options);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(openapiSpecification));
 
 //Route
-//app.use('/api/employees', EmployeeRoute)
-app.use('/api', employeeRoute)
+app.use('/api/employees', EmployeeRoute)
+// app.use('/api', employeeRoute)
 
 //redirect to add /api-docs to url
 app.get('/', async(req, res) => {
   res.redirect('/api-docs');
 })
-
 
 //Error handler for 404 errors.  This is the error handling section for handling the 400, 404, 500 errors.
 //Error handling is always done in the index.js or app.js files.
@@ -95,8 +93,6 @@ app.use(function(err, req, res, next) {
     stack: req.app.get('env') === 'development' ? err.stack : undefined
   })
 })
-
-
 
 // Wire-up the Express server.
 app.listen(PORT, () => {

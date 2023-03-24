@@ -4,7 +4,6 @@
 //Date 14 March 2023
 //Description:  TypeScript file for the app component.
 
-
 import { Component } from '@angular/core';
 
 @Component({

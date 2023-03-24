@@ -4,7 +4,6 @@
 //Date 14 March 2023
 //Description:  TypeScript file for the main.ts.
 
-
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 

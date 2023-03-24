@@ -2,7 +2,7 @@
 Title:  base-layout.component.css
 Original Author: Richard Krasso
 Appended by:  John Vanhessche
-Date 14 March 2023
+Date 22 March 2023
 Description:  CSS file for the base-layout component.
 */
 
@@ -12,8 +12,18 @@ Description:  CSS file for the base-layout component.
   font-weight: lighter;;
 }
 
+.mat-toolbar {
+  background-color: #ae0001;
+}
+
+
 .navbar-container {
   padding: 5px;
+  color: #eeba30;
+}
+
+.mat-icon-button {
+  color: #eeba30;
 }
 
 .navbar-link {

@@ -63,9 +63,9 @@ app.use('/api/employees', EmployeeRoute)
 // app.use('/api', employeeRoute)
 
 //redirect to add /api-docs to url
-app.get('/', async(req, res) => {
-  res.redirect('/api-docs');
-})
+// app.get('/', async(req, res) => {
+//   res.redirect('/api-docs');
+// })
 
 //Error handler for 404 errors.  This is the error handling section for handling the 400, 404, 500 errors.
 //Error handling is always done in the index.js or app.js files.

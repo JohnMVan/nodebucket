@@ -1,0 +1,344 @@
+[3/29/2023, 7:30:38 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 4,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    }
+  ]
+}
+[3/29/2023, 7:32:04 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 5,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    }
+  ]
+}
+[3/29/2023, 7:18:52 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 6,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    }
+  ]
+}
+[3/29/2023, 7:25:50 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 7,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}
+[3/29/2023, 7:34:56 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 7,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}
+[3/29/2023, 8:06:27 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 7,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}
+[3/29/2023, 8:16:22 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}
+[3/29/2023, 8:16:25 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}
+[3/29/2023, 8:18:31 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}
+[3/29/2023, 8:18:33 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  done: [],
+  todo: [
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242e237dd611e86596143d")
+    },
+    {
+      text: 'Go to bed early',
+      _id: new ObjectId("64242ed27dd611e865961441")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f047dd611e865961446")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242f6ecb32ac09c2815005")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("64242fc4cb32ac09c281500c")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d56cb39dca3d7f62baaf")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d70e6373e40cf76a38cb")
+    }
+  ]
+}

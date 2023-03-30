@@ -33,7 +33,8 @@ import { MatDividerModule } from '@angular/material/divider';
 //primeNG
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
-
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { MessagesModule } from 'primeng/messages';
     HomeComponent,
     AuthLayoutComponent,
     BaseLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { MessagesModule } from 'primeng/messages';
     MatFormFieldModule,
     MatDividerModule,
     MessageModule,
-    MessagesModule
+    MessagesModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

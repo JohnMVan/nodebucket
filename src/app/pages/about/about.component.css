@@ -1,0 +1,20 @@
+/*
+Title:  about.component.css
+Original Author: Richard Krasso
+Appended by:  John Vanhessche
+Date 1 April 2023
+Description:  CSS file for the about component.
+*/
+
+.main-container {
+    background: #eeba30;
+    padding-right: 30px;
+    font-size: large;
+    line-height: 2.0;
+    
+}
+
+h1 {
+    color: #740001;
+    font-weight: bolder;
+}

@@ -49,7 +49,7 @@ const options = {
           version: '1.0.0',
       },
   },
-  apis: ['./routes/*.js'],
+  apis: ['./server/routes/*.js'],
 }; 
 
 //Open-API

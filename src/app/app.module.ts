@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -33,8 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
 //primeNG
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
+
 
 @NgModule({
   declarations: [

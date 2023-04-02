@@ -1,3 +1,11 @@
 [3/29/2023, 7:32:07 AM] server	 employee-route.js - id could not be parsed: NaN
 [3/29/2023, 7:32:07 AM] server	 employee-route.js - req.params.empId must be a number foo
 [3/29/2023, 7:33:01 AM] server	 employee-route.js - NotFoundError: Not Found
+[3/31/2023, 7:00:04 PM] server	 employee-route.js - Error: Bad Request
+[3/31/2023, 7:07:10 PM] server	 employee-route.js - Error: Bad Request
+[3/31/2023, 7:10:48 PM] server	 employee-route.js - Error: Bad Request
+[3/31/2023, 7:13:56 PM] server	 employee-route.js - id could not be parsed: NaN
+[3/31/2023, 7:13:56 PM] server	 employee-route.js - req.params.empId must be a number foo
+[3/31/2023, 7:15:28 PM] server	 employee-route.js - Error: Bad Request
+[3/31/2023, 7:16:11 PM] server	 employee-route.js - id could not be parsed: NaN
+[3/31/2023, 7:16:11 PM] server	 employee-route.js - req.params must be a number: foo

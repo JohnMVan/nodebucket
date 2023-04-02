@@ -7,124 +7,124 @@ Description:  HTML file for the home component.
 -->
 
 
-<div fxLayout="column" class="main-welcome">
-
-  <div fxFlex>
-    <h1 class="title"></h1>
-  </div>
-
-
-
+<div fxLayout="column" class="main-welcome">  
   
-    Welcome to WEB 450's - nodebucket Project <br />
-    <span class="subtitle">
-      Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait until the last minute to begin working on your tasks.
-    </span>
-  </h1>
-</div>
-
-
-<!-- div for create task -->
-<div fxFlex>
-
-  <!-- server messages -->
-  <div class="task-container">
-    <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
+  <div fxFlex>
+    <h1 class="title">
+      Welcome to WEB 450's - nodebucket Project <br />
+      <span class="subtitle">
+        Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait until the last minute to begin working on your tasks.
+      </span>
+    </h1>
   </div>
 
-  <div class="task-container mat-elevation-z4" fxLayout="column">
-    <mat-card>
-      <form [formGroup]="taskForm" (ngSubmit)="createTask(); taskForm.reset();">
-        <mat-card-content>
-          <mat-form-field appearance="fill" class="w-100">
-            <input 
-              matInput
-              formControlName="task"
-              placeholder = "Enter a task name..."              
-            />
 
-            <button type="submit" [disabled]="!taskForm.valid" mat-icon-button matSuffix>
-              <mat-icon color="primary" matSuffix style="width: 36px; height: 36px; font-size: 36px;">
-                add_circle
-              </mat-icon>
-            </button>
-          </mat-form-field>
+  <!-- div for create task -->
+  <div fxFlex>
 
-          <!-- error handling -->
-          <mat-error *ngIf="'taskForm.controls['task'].hasError('required') && taskForm.controls['task'].touched">
-            Task is a required field
-          </mat-error>
-          <mat-error *ngIf="'taskForm.controls['task'].hasError('minlength') && taskForm.controls['task'].touched">
-            Task field must be at least 3 characters in length.
-          </mat-error>
-          <mat-error *ngIf="'taskForm.controls['task'].hasError('maxlength') && taskForm.controls['task'].touched">
-            Task cannot exceed 35 characters in length.
-          </mat-error>
-
-        </mat-card-content>
-      </form>
-    </mat-card>
-
-  </div>
-</div>
-
-<br>
-
-
-<!-- todo and done columns -->
-<div fxFlex>
-  <div fxLayout="row" fxLayoutGap = 15px" class="task-container style=margin-top: 10px">
-
-    <!-- first row, todo column -->
-    <div fxFlex>
-      <mat-card class="mat-elevation-z0">
-        <mar-card-title>ToDo</mar-card-title>
-
-        <mat-card-content>
-
-          <div>
-            <div *nfFor="let item of todo">
-              <mat-card class="task-card mat-elevation-z0">
-                <mat-card-content>
-                  <div fxLayout="row">
-
-                    <div fxFlex>
-                      {{ item.text}}
-                    </div>
-                    <!-- add delete icon -->
-                  </div>
-                </mat-card-content>
-
-              </mat-card>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
+    <!-- server messages -->
+    <div class="task-container">
+      <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
     </div>
 
-    <!-- second row done column -->
-    <div fxFlex>
-      <mat-card class="mat-elevation-z0">
-        <mat-card-title>Done</mat-card-title>
-        <mat-card-content>
-          <div class="task-column">
-            <div *ngFor="let item of done">
-              <mat-card class="task-card mat-elevation-z0">
-                <mat-card-content>
-                  <div fxLayout="row">
-                    <div fxFlex>
-                      {{ item.text }}
-                    </div>
-                    <!-- delete icon goes here -->
-                  </div>
-                </mat-card-content>
-              </mat-card>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
+    <div class="task-container mat-elevation-z4" fxLayout="column">
+      <mat-card>
+        <form [formGroup]="taskForm" (ngSubmit)="createTask(); taskForm.reset();">
+          <mat-card-content>
+            <mat-form-field appearance="fill" class="w-100">
+              <input 
+                matInput
+                formControlName="task"
+                placeholder = "Enter a task name..."              
+              />
 
+              <button type="submit" [disabled]="!taskForm.valid" mat-icon-button matSuffix>
+                <mat-icon color="primary" matSuffix style="width: 36px; height: 36px; font-size: 36px;">
+                  add_circle
+                </mat-icon>
+              </button>
+            </mat-form-field>
+
+            <!-- error handling -->
+            <mat-error *ngIf="taskForm.controls['task'].hasError('required') && taskForm.controls['task'].touched">
+              Task is a required field
+            </mat-error>
+
+            <mat-error *ngIf="taskForm.controls['task'].hasError('minlength') && taskForm.controls['task'].touched">
+              Task field must be at least 3 characters in length.
+            </mat-error>
+
+            <mat-error *ngIf="taskForm.controls['task'].hasError('maxlength') && taskForm.controls['task'].touched">
+              Task cannot exceed 35 characters in length.
+            </mat-error>
+
+          </mat-card-content>
+        </form>
+      </mat-card>
     </div>
   </div>
+  
+  <br>
 
+  <!-- todo and done columns -->
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="15px" class="task-container style=margin-top: 10px">
+
+      <!-- first row, todo column -->
+      <div fxFlex>
+        <mat-card class="mat-elevation-z0">
+          <mat-card-title>ToDo</mat-card-title>
+
+          <mat-card-content>
+
+            <div class="task-column">
+              <div *ngFor="let item of todo">
+                <mat-card class="task-card mat-elevation-z0">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{ item.text}}
+                      </div>
+
+                      <!-- add delete icon -->
+                    </div>
+                  </mat-card-content>
+
+                </mat-card>
+
+              </div>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- second row done column -->
+      <div fxFlex>
+        <mat-card class="mat-elevation-z0">
+          <mat-card-title>Done</mat-card-title>
+
+          <mat-card-content>
+
+            <div class="task-column">
+              <div *ngFor="let item of done">
+                <mat-card class="task-card mat-elevation-z0">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{ item.text }}
+                      </div>
+
+                      <!-- delete icon goes here -->
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>

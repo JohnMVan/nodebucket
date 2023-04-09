@@ -7116,3 +7116,14 @@
     }
   ]
 }
+[4/9/2023, 9:53:20 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902e34f117c117f59625b"),
+  empId: 1007,
+  done: [],
+  todo: [
+    { text: 'task 1', _id: new ObjectId("642f5e73cbba9d2314a17c71") },
+    { text: 'task 3', _id: new ObjectId("642f5e80cbba9d2314a17c8b") },
+    { text: 'task 4', _id: new ObjectId("642f5e83cbba9d2314a17c93") },
+    { text: 'task 5', _id: new ObjectId("642f5e9fcbba9d2314a17cab") }
+  ]
+}

@@ -31,6 +31,30 @@ const checkNum = (id) => {
     }
 }
 
+/**
+ * data from angular application
+ */
+
+// const data = 
+// {
+//     "todo": [
+//         {
+//             "text": "go to bed" 
+//         },
+//         {
+//             "text": "work on homework"
+//         }
+//     ],
+//     "done": [
+//         {
+//             "text": "turn in"
+//         },
+//         {
+//             "text": "blah"
+//         }
+//     ]
+// }
+
 //This schema is set for the task entered.  For starters, there must be some type of text inputted (required)
 const taskSchema = {
     type: 'object',
@@ -39,6 +63,45 @@ const taskSchema = {
     },
     required: ['text'],
     additionalProperties: false
+}
+
+const tasksSchema = {
+    type: 'object',
+    required: ['todo', 'done'],
+    additionalProperties: false,
+    properties: {
+        todo: {
+            type: 'array',
+            additionalProperties: false,
+            items: {
+                type: 'object',
+                properties: {
+                    text: { type: 'string' },
+                    _id: { type: 'string' }
+                },
+                required: ['text', '_id'],
+                additionalProperties: false
+            }
+        },
+        done: {
+            type: 'array',
+            additionalProperties: false,
+            items: {
+                type: 'object',
+                properties: {
+                    text: { type: 'string' },
+                    _id: { type: 'string' }
+                },
+                required: ['text', '_id'],
+                additionalProperties: false
+            }
+        }
+    }
+}
+
+function getTask(id, tasks) {
+    const task = tasks.find(item => item._id.toString() === id)
+    return task
 }
 
 //the API we'll be using for this application to handle the data being passed over.
@@ -258,6 +321,192 @@ router.post('/:empId/tasks', async(req, res, next) => {
     } else {
         console.error('req.params.empId must be a number', empId)
         errorLogger({filename: myFile, message: `req.params.empId must be a number ${empId}`})
+        next(err)
+    }
+})
+
+/**
+ * updateTasks
+ * @openapi
+ * /api/employees/{id}/tasks:
+ *   put:
+ *     tags:
+ *       - Employees
+ *     description: Update tasks for an employee
+ *     summary: updates the tasks for an employee
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - todo
+ *               - done             
+ *             properties:
+ *               todo:
+ *                 type: array                 
+ *               done:
+ *                 type: array                               
+ *     responses:
+ *       '204':
+ *         description: Task updated
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Employee not found
+ *       '500':
+ *         description:  Exception
+ *       '501':
+ *         description: MongoDB Exception
+ */
+//update task api
+router.put('/:empId/tasks', async(req, res, next) => {
+    let empId = req.params.empId
+    empId = parseInt(empId, 10)
+
+    if (isNaN(empId)) {
+        const err = Error('input must be a number')
+        err.status = 400
+        console.error('input must be a number:', empId)
+        errorLogger({filename: myFile, message: `input must be a number:' ${empId}`})
+        next(err)
+        return
+    }
+
+    //early return design pattern in use here.
+    try {
+        let emp = await Employee.findOne({'empId': empId})
+
+        if (!emp) {            
+            console.error(createError(404))
+            errorLogger({filename: myFile, message: createError(404)})
+            next(createError(404))    //next call should be last
+            return
+        }
+
+        const tasks = req.body
+        const validator = ajv.compile(tasksSchema)
+        const valid = validator(tasks)
+
+        if (!valid) {
+            const err = Error('Bad Request')
+            err.status = 400
+            console.error('Bad Request.  Unable to validate req.body against tasksSchema')
+            errorLogger({filename: myFile, message: `Bad Request.  Unable to verify against tasksSchema`})
+            next(err)
+            return
+        }
+
+        emp.set({
+            todo: req.body.todo,
+            done: req.body.done
+        })
+
+        const result = await emp.save()
+        console.log(result)
+        debugLogger({filename: myFile, message: result})
+        res.status(204).send()
+
+    } catch (err) {
+        next(err)
+    }
+})
+
+/**
+deleteTask
+ * @openapi
+ * /api/employees/{id}/tasks/{taskId}:
+ *   delete:
+ *     tags:
+ *       - Employees
+ *     description: Deleting from an employee API
+ *     summary: deletes a todo or done task for an employee
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: Id of the user in Mongo
+ *         schema:
+ *           type: integer
+ *       - name: taskId
+ *         description: Id of the task on Mongo
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '204':
+ *         description: Task deleted
+ *       '400':
+ *         description: Bad Request
+ *       '404':
+ *         description: Employee not found
+ *       '500':
+ *         description:  Exception
+ *       '501':
+ *         description: MongoDB Exception
+ */
+router.delete('/:empId/tasks/:taskId', async(req, res, next) => {
+    let taskId = req.params.taskId
+    let empId = req.params.empId
+    
+    empId = parseInt(empId, 10)
+
+    if (isNaN(empId)) {
+        const err = Error('input must be a number')
+        err.status = 400
+        console.error('req params.empId must be a number:', empId)
+        errorLogger({filename: myFile, message: `req params.empId must be a number ${empId}`})
+        next(err)
+        return
+    }
+
+    try {
+        let emp = await Employee.findOne({'empId': empId})
+
+        if(!emp) {
+            next(createError(404))
+            console.error(createError(404))
+            errorLogger({filename: myFile, message: createError(404)})
+            next(err)
+            return
+        }
+
+        //need to find which array the task has been added to.  Call the get task function
+        //to find the document _id 
+
+        const todoTask = getTask(taskId, emp.todo)
+        const doneTask = getTask(taskId, emp.done)
+
+        if (todoTask !== undefined) {
+            emp.todo.id(todoTask._id).remove()
+        }
+
+        if (doneTask !== undefined) {
+            emp.done.id(doneTask._id).remove()
+        }
+
+        if (todoTask === undefined && doneTask === undefined) {
+            const err = Error('Not Found')
+            err.status = 404
+            console.error('TaskId not found', taskId)
+            errorLogger({filename: myFile, message: `TaskId not found ${taskId}`})
+            next(err)
+            return
+        }
+
+        const result = await emp.save()
+        debugLogger({filename: myFile, message: result})
+        res.status(204).send()
+
+    } catch (err) {
         next(err)
     }
 })

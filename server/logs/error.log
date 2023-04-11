@@ -9,3 +9,10 @@
 [3/31/2023, 7:15:28 PM] server	 employee-route.js - Error: Bad Request
 [3/31/2023, 7:16:11 PM] server	 employee-route.js - id could not be parsed: NaN
 [3/31/2023, 7:16:11 PM] server	 employee-route.js - req.params must be a number: foo
+[4/5/2023, 2:45:03 PM] server	 employee-route.js - TaskId not found 64242e237dd611e86596143d
+[4/5/2023, 3:26:58 PM] server	 employee-route.js - TaskId not found 64242e237dd611e86596143d
+[4/6/2023, 6:49:16 PM] server	 employee-route.js - Bad Request.  Unable to verify against tasksSchema
+[4/6/2023, 6:53:24 PM] server	 employee-route.js - id could not be parsed: NaN
+[4/6/2023, 6:53:24 PM] server	 employee-route.js - req.params must be a number: foo
+[4/6/2023, 6:54:51 PM] server	 employee-route.js - Bad Request.  Unable to verify against tasksSchema
+[4/9/2023, 9:39:00 AM] server	 employee-route.js - req params.empId must be a number NaN

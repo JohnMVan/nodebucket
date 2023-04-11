@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  findAllTakss: `https://nodebucket.com/api`
 };

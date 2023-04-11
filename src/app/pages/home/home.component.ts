@@ -185,13 +185,15 @@ export class HomeComponent implements OnInit {
     })
   }
   
-  drop(event: CdkDragDrop<any []>) {
+  drop(event: CdkDragDrop<any[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex)
 
       console.log("Reordered tasks in the existing list")
 
+      //update for move item
       this.updateTaskList(this.empId, this.todo, this.done)
+      
     } else {
       transferArrayItem(
         event.previousContainer.data, 
@@ -199,6 +201,9 @@ export class HomeComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
         )
+
+        //update for the transfer
+        this.updateTaskList(this.empId, this.todo, this.done)
     }
   }
 }

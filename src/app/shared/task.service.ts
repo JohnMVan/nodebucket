@@ -1,3 +1,9 @@
+//Title:  task.service.ts
+//Original Author: Richard Krasso
+//Appended by:  John Vanhessche
+//Date 14 March 2023
+//Description:  TypeScript file for the task.service component.
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
